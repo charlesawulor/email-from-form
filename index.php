@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Send mail from PHP using SMTP</title>
+	<title>Send Email</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 
 </head>
@@ -17,7 +17,7 @@
 
 			$mail = new PHPMailer;
 
-			 $mail->SMTPDebug = 4;                               // Enable verbose debug output
+			// $mail->SMTPDebug = 4;                               // Enable verbose debug output
 
 			$mail->isSMTP();                                      // Set mailer to use SMTP
 			$mail->Host = 'mail.sixteen07.com';  // Specify main and backup SMTP servers
