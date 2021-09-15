@@ -357,7 +357,7 @@ textarea.input100 {
 /*------------------------------------------------------------------
 [ Alert validate ]*/
 
-.validate-input {
+/*.validate-input {
   position: relative;
 }
 
@@ -424,7 +424,7 @@ textarea.input100 {
   height: 40px;
   top: 35px;
   right: 10px;
-}
+} */
 
 /*---------------------------------------------*/
 @media (max-width: 576px) {

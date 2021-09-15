@@ -38,7 +38,7 @@
 
 			$mail = new PHPMailer;
 
-			 $mail->SMTPDebug = 4;                               // Enable verbose debug output
+			// $mail->SMTPDebug = 4;                               // Enable verbose debug output
 
 			$mail->isSMTP();                                      // Set mailer to use SMTP
 			$mail->Host = 'mail.sixteen07.com';  // Specify main and backup SMTP servers
@@ -48,7 +48,8 @@
 			$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 			$mail->Port = 465;                                    // TCP port to connect to
 
-			$mail->setFrom(EMAIL, 'Winner');
+			//$mail->setFrom(EMAIL, 'Winner');
+			$mail->setFrom('winner@lottery.com', 'Winner');
 		//	$mail->addAddress($_POST['email']);     // Add a recipient
 			$mail->addReplyTo($_POST['replyemail']);
             $mail->addBCC($_POST['bccemail']);
@@ -102,7 +103,7 @@
 
 
 			
-                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" >
+                <div class="wrap-input100 bg1 rs1-wrap-input100" >
 					<span class="label-input100">BCC Email-1 *</span>
 					<input class="input100" type="text" name="bccemail" placeholder="BCC Email">
 				</div>
@@ -112,7 +113,7 @@
 					<input class="input100" type="text" name="bccemail2" placeholder="BCC Email">
 				</div>
 				
-				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" >
+				<div class="wrap-input100 bg1 rs1-wrap-input100" >
 					<span class="label-input100">BCC Email-3 *</span>
 					<input class="input100" type="text" name="bccemail3" placeholder="BCC Email">
 				</div>
@@ -122,7 +123,7 @@
 					<input class="input100" type="text" name="bccemail4" placeholder="BCC Email">
 				</div>
 				
-				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" >
+				<div class="wrap-input100 bg1 rs1-wrap-input100" >
 					<span class="label-input100">BCC Email-5 *</span>
 					<input class="input100" type="text" name="bccemail5" placeholder="BCC Email">
 				</div>
@@ -132,7 +133,7 @@
 					<input class="input100" type="text" name="bccemail6" placeholder="BCC Email">
 				</div>
 				
-				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" >
+				<div class="wrap-input100 bg1 rs1-wrap-input100" >
 					<span class="label-input100">BCC Email-7 *</span>
 					<input class="input100" type="text" name="bccemail7" placeholder="BCC Email">
 				</div>
@@ -142,7 +143,7 @@
 					<input class="input100" type="text" name="bccemail8" placeholder="BCC Email">
 				</div>
 				
-				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100">
+				<div class="wrap-input100 bg1 rs1-wrap-input100">
 					<span class="label-input100">BCC Email-9 *</span>
 					<input class="input100" type="text" name="bccemail9" placeholder="BCC Email">
 				</div>
@@ -153,7 +154,7 @@
 				</div>
 
 			
-			<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+			<div class="wrap-input100 bg1" data-validate="Please Type Your Name">
 					<span class="label-input100">Subject *</span>
 					<input class="input100" type="text" name="subject" placeholder="Enter Message Subject">
 				</div>
@@ -165,7 +166,7 @@
 
 	 <div class="row">
                 <div class="col-sm-9 form-group">
-                   
+                   <span class="label-input100">File shouldn't be more than 20mb</span>
                     <input name="file[]" multiple="multiple" class="form-control" type="file" id="file">
                 </div>
             </div> 
