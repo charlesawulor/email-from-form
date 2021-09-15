@@ -1,3 +1,40 @@
+<?php
+session_start();
+?>
+<?php
+include('include/dbconnect.php');
+?>
+<?php
+if (isset($_POST['login']))
+{
+//collect and clean up user input
+$useremail = $_POST['useremail'];
+$password = $_POST['password'];
+
+// let us perform input check for empty 
+if(empty($useremail) || empty($password))
+{
+echo '<div class="alert-error"><i class="fa fa-exclamation-circle"  style="font-size:25px;color:coral"></i> <font color="red" size="10pt">Please some login fields are  empty</font></div>';
+return false;
+}
+//perform a query to check if there is such user
+$query = "SELECT * FROM user WHERE useremail='$useremail'";
+$result = mysqli_query($conn,$query);
+$num_row = mysqli_num_rows($result);
+//if there is a user with collected details
+if($num_row == 1)
+{
+  
+  echo "<script type='text/javascript'> document.location = 'index-new.php'; </script>";
+}
+else{
+echo "user your password is incorrect try again";
+}
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +82,7 @@
 				</div> -->
 				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
 					<span class="label-input100">Email</span>
-					<input class="input100" type="email" name="email" placeholder="Enter Email">
+					<input class="input100" type="email" name="useremail" placeholder="Enter Email">
 				</div>
 
 	             <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
@@ -58,7 +95,7 @@
 				
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn" name="sendmail">
+					<button class="contact100-form-btn" name="login">
 						<span>
 							Login
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

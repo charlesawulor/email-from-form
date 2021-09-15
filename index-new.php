@@ -1,3 +1,12 @@
+<?php
+include('include/dbconnect.php');
+?>
+
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +96,18 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
+		
+				<a href="login.php"><div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" name="login">
+						<span>
+							Sign Out
+						<i class="fa fa-long-arrow-left m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div></a> <br>  <br>  <br>
+		
 			<form class="contact100-form validate-form" role="form" method="post" enctype="multipart/form-data">
+
 				<span class="contact100-form-title">
 					Send Email
 				</span>
