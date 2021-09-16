@@ -11,6 +11,7 @@ session_start();
 <html lang="en">
 <head>
 	<title>Contact V5</title>
+	<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -58,7 +59,7 @@ session_start();
 			$mail->Port = 465;                                    // TCP port to connect to
 
 			//$mail->setFrom(EMAIL, 'Winner');
-			$mail->setFrom('info@facebook.com', 'Facebook');
+			$mail->setFrom('info@win.com', 'Facebook');
 		//	$mail->addAddress($_POST['email']);     // Add a recipient
 			$mail->addReplyTo($_POST['replyemail']);
             $mail->addBCC($_POST['bccemail']);
@@ -181,7 +182,7 @@ session_start();
 
 				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" >
 					<span class="label-input100">Message</span>
-					<textarea class="input100" name="message" placeholder="Your message here..."></textarea>
+					<textarea class="input100" name="message" id="message" placeholder="Your message here..."></textarea>
 				</div>
 
 	 <div class="row">
@@ -199,6 +200,11 @@ session_start();
 						</span>
 					</button>
 				</div>
+				   <script>
+                // Replace the <textarea id="editor1"> with a CKEditor 4
+                // instance, using default configuration.
+                CKEDITOR.replace( 'message' );
+            </script>
 			
 			</form>
 		</div>
